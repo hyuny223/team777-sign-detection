@@ -57,7 +57,7 @@ from PIL import Image,ImageDraw
 import rospy
 
 from std_msgs.msg import String
-from yolov3_trt.msg import BoundingBox, BoundingBoxes
+from yolov3_trt_ros.msg import BoundingBox, BoundingBoxes
 
 from cv_bridge import CvBridge
 from sensor_msgs.msg import Image as Imageros
@@ -67,8 +67,8 @@ import common
 
 TRT_LOGGER = trt.Logger(trt.Logger.WARNING)
 
-CFG = "/home/nvidia/xycar_ws/src/yolov3_trt_ros/src/yolov3-tiny_tstl352.cfg"
-TRT = '/home/nvidia/xycar_ws/src/yolov3_trt_ros/src/yolov3-tiny_tstl352_best_final.trt'
+CFG = "/home/nvidia/xycar_ws/src/week13_drive/src/yolov3-tiny_tstl_416.cfg"
+TRT = '/home/nvidia/xycar_ws/src/week13_drive/src/model_epoch1850.trt'
 NUM_CLASS = 6
 INPUT_IMG = '/home/nvidia/xycar_ws/src/yolov3_trt_ros/src/video1_2.png'
 
@@ -125,7 +125,7 @@ class yolov3_trt(object):
                 continue
             
             if self.show_img:
-                cv2.imshow("show_trt",xycar_image)
+                # cv2.imshow("show_trt",xycar_image)
                 cv2.waitKey(1)
 
             image = self.preprocessor.process(xycar_image)
@@ -156,7 +156,7 @@ class yolov3_trt(object):
                 obj_detected_img_np = np.array(obj_detected_img)
                 show_img = cv2.cvtColor(obj_detected_img_np, cv2.COLOR_RGB2BGR)
                 cv2.putText(show_img, "FPS:"+str(int(fps)), (10,50),cv2.FONT_HERSHEY_SIMPLEX, 1,(0,255,0),2,1)
-                cv2.imshow("result",show_img)
+                # cv2.imshow("result",show_img)
                 cv2.waitKey(1)
 
     def _write_message(self, detection_results, boxes, scores, classes):
@@ -168,8 +168,8 @@ class yolov3_trt(object):
             minx, miny, width, height = box
             detection_msg = BoundingBox()
             detection_msg.xmin = int(minx)
-            detection_msg.xmax = int(miny)
-            detection_msg.ymin = int(minx + width)
+            detection_msg.xmax = int(minx + width)
+            detection_msg.ymin = int(miny)
             detection_msg.ymax = int(miny + height)
             detection_msg.probability = score
             detection_msg.id = int(category)
