@@ -1,6 +1,0 @@
-left
-right
-stop
-crosswalk
-u_turn
-traffic_light

@@ -68,7 +68,7 @@ import common
 TRT_LOGGER = trt.Logger(trt.Logger.WARNING)
 
 CFG = "/home/nvidia/xycar_ws/src/week13_drive/src/yolov3-tiny_tstl_416.cfg"
-TRT = '/home/nvidia/xycar_ws/src/week13_drive/src/model_epoch1850.trt'
+TRT = '/home/nvidia/xycar_ws/src/week13_drive/src/model/model_epoch1850.trt'
 NUM_CLASS = 6
 INPUT_IMG = '/home/nvidia/xycar_ws/src/yolov3_trt_ros/src/video1_2.png'
 

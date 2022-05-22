@@ -13,7 +13,7 @@
     <param name="io_method" value="mmap" />
   </node>
 
-  <node name="auto_drive" pkg="week13_drive" type="w13_drive_01.py" output="screen" />
+  <node name="auto_drive" pkg="week13_drive" type="drive.py" output="screen" />
   <node name="yolo_v3_trt" pkg="week13_drive" type="trt_detection.py" output="screen" />
 
 </launch>
