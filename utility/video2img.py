@@ -26,7 +26,7 @@ if __name__ == "__main__":
     cap = cv2.VideoCapture(args.video_path)
     video_frames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
 
-    if args.frame_pass != 1:
+    if args.frame_pass != 0:
         frame_pass = args.frame_pass
         print("frame pass:", frame_pass,
               "\nExpected frames:", int(video_frames/frame_pass))

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>yolov3_trt_ros</name>
+  <name>week13_drive</name>
   <version>0.0.0</version>
-  <description>The yolov3_trt_ros package</description>
+  <description>The week13_drive package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
