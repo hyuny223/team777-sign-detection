@@ -49,7 +49,7 @@
 
  **2-3. 로직**
     
-    ![image.png](readme_images/image.png)
+![image.png](readme_images/image.png)
     
 
 ---
